@@ -1,9 +1,16 @@
 plugins {
     java
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "org.example"
 version = "0.1.0"
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
 
 repositories {
     mavenCentral()
@@ -13,9 +20,17 @@ repositories {
 dependencies {
     implementation("com.github.Minestom:Minestom:-SNAPSHOT")
 
-    // This is used to enable logging in Minestom
+    // Enable logging in Minestom
     implementation("org.slf4j:slf4j-simple:2.0.13")
 
     // Find some more Minestom libraries here:
     // https://minestom.net/libraries
+}
+
+tasks.shadowJar {
+    archiveClassifier = ""
+}
+
+tasks.build {
+    dependsOn(tasks.shadowJar)
 }

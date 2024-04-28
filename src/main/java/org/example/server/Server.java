@@ -17,12 +17,15 @@ public final class Server {
         var instance = instanceManager.createInstanceContainer();
         instance.setChunkSupplier(LightingChunk::new);
         instance.setGenerator(unit ->
-                unit.modifier().fillHeight(0, 63, Block.STONE));
+                unit.modifier().fillHeight(-64, 0, Block.STONE));
+
+        instance.setTime(6000);
+        instance.setTimeRate(0);
 
         // Set the player's spawning instance when they join
         eventHandler.addListener(AsyncPlayerConfigurationEvent.class, event -> {
             event.setSpawningInstance(instance);
-            event.getPlayer().setRespawnPoint(new Pos(0, 64, 0));
+            event.getPlayer().setRespawnPoint(Pos.ZERO);
         });
 
         // Enable online mode and start the server

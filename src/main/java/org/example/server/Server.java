@@ -22,6 +22,9 @@ public final class Server {
         instance.setTime(6000);
         instance.setTimeRate(0);
 
+        instance.setTime(6000);
+        instance.setTimeRate(0);
+
         // Set the player's spawning instance when they join
         eventHandler.addListener(AsyncPlayerConfigurationEvent.class, event -> {
             event.setSpawningInstance(instance);

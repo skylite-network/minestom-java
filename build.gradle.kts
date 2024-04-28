@@ -1,10 +1,13 @@
 plugins {
     java
+    application
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "org.example"
 version = "0.1.0"
+
+application.mainClass = "org.example.server.Server"
 
 java {
     toolchain {

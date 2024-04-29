@@ -24,7 +24,7 @@ dependencies {
     implementation("com.github.Minestom:Minestom:-SNAPSHOT")
 
     // Enable logging in Minestom
-    implementation("ch.qos.logback:logback-classic:1.4.14")
+    implementation("ch.qos.logback:logback-classic:1.5.6")
 
     // Find some more Minestom libraries here:
     // https://minestom.net/libraries

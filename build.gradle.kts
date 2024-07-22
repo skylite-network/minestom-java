@@ -1,7 +1,7 @@
 plugins {
     java
     application
-    id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("io.github.goooler.shadow") version "8.1.7"
 }
 
 group = "org.example"
@@ -20,7 +20,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.Minestom:Minestom:-SNAPSHOT")
+    implementation("net.minestom:minestom-snapshots:1f34e60ea6")
 
     // Enable logging in Minestom
     implementation("ch.qos.logback:logback-classic:1.5.6")
